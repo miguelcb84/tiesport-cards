@@ -18,11 +18,15 @@ parser.add_argument("csvfile", help="relative path to csv file")
 parser.add_argument("-v", "--verbosity", action="count",
                     help="increase output verbosity")
 parser.add_argument("-t", "--template", help="relative path to template used to generate the output (default: template.jinja",
-                    action="store_true")
+                    type=str, default="template.html")
 parser.add_argument("-o", "--output", help="name of the output file (default: output.html)",
-                    action="store_true")
+                    type=str, default="output.html")
 parser.add_argument("-of", "--ofolder", help="name of the output folder (default: output)",
-                    action="store_true")
+                    type=str, default="output")
+parser.add_argument("-g", "--groupoutput", help="group output by field. For each row it creates a folder and places the output file (default: name)",
+                    type=str, default="name")
+parser.add_argument("-gb", "--groupby", help="separate output by folder or file (default: folder)",
+                    type=str, default="folder")
 args = parser.parse_args()
 
 
@@ -35,6 +39,7 @@ if args.ofolder:
     out_folder = args.ofolder
 else:
     out_folder = 'output'
+
 
 #env = Environment(loader=PackageLoader('yourapplication', 'templates'))
 templateLoader = jinja2.FileSystemLoader(searchpath=".")
@@ -74,9 +79,13 @@ user_count = 0
 
 # iterate over the rows
 for row in reader:
-    name = row.get('Nombre')
+    if args.groupoutput:
+        name = row.get(args.groupoutput)
+    else:
+        name = row.get('Nombre')
+
     if not name:
-        print "ERROR: Skiping row: missing Nombre field. {}".format(row)
+        print "ERROR: Skiping row: missing 'groupoutput' field. {}".format(row)
         continue
     # Normalize name
     norm_name = unidecode(unicode(name))
@@ -86,14 +95,18 @@ for row in reader:
     for k in [k for k,v in row.iteritems() if k in REQUIRED_FIELDS and not v]:
         print "WARNING: field {} for user {} is empty".format(k, name)
 
-    # create folder
-    if not os.path.exists("{}/{}".format(out_folder, norm_name)):
-        os.makedirs("{}/{}".format(out_folder, norm_name))
-
+    if args.groupby == 'file':
+        # print to output
+        output_path = "{}/{}.html".format(out_folder, norm_name)
+    else:
+        # create folder
+        if not os.path.exists("{}/{}".format(out_folder, norm_name)):
+            os.makedirs("{}/{}".format(out_folder, norm_name))
+        # print to output
+        output_path = "{}/{}/{}".format(out_folder, norm_name, o_filename)
+        
     # render template
     outputText = template.render( row )
-    # print to output
-    output_path = "{}/{}/{}".format(out_folder, norm_name, o_filename)
     with open(output_path, 'wb') as out:
         out.write(outputText)
 
