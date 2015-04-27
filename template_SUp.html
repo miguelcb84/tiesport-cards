@@ -1,0 +1,29 @@
+{% for user in yellowpages %}
+<div class="col-xs-12 col-sm-6 padding-min">
+    <div class="box contacts-grid-item contact_match">
+        <div class="row">
+            <div class="contacts-grid-item-data col-xs-12 padding-null">
+                <img src="{{user.pic}}" alt="" class="pull-left">
+                <a href="{{user.url}}" class="mixpanel" data-name="name_profile" data-prop="{{user.url}}"><span class="titulo_sm">{{user.name}}</span></a>
+                <p class="texto">
+                    {{user.headline}}
+                </p>
+            </div>
+            <div class="col-xs-12 padding-null">
+                <p class="texto bio">
+                    {{user.bio}}
+                </p>
+            </div>
+        </div>
+        <div class="btn_wrap_sm footer hidden-xs">
+            <a class="btn btn-profile mixpanel" href="{{user.url}}" data-name="profile" data-prop="{{user.url}}">See profile</a>
+            <a class="btn btn-contact mixpanel" href="{{user.url}}" data-name="contact" data-prop="{{user.url}}">Contact</a>
+        </div>
+        <div class="btn_wrap_sm footer visible-xs-block visible-xs row">
+            <a class="btn btn-profile mixpanel col-xs-6" href="{{user.url}}" data-name="profile" data-prop="{{user.url}}">See profile</a>
+            <a class="btn btn-contact mixpanel col-xs-6" href="{{user.url}}" data-name="contact" data-prop="{{user.url}}">Contact</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+            
