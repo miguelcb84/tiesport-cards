@@ -18,6 +18,9 @@
             text-decoration: underline;
             color: #00a7c7;
         }
+        td{
+            width: 50%;
+        }
         #emailBody{
             background-color: #f9f9f9;
         }
@@ -39,10 +42,17 @@
         }
         .first-row td{
             padding-bottom: 12px;
-            border-bottom: 1px solid #ebebeb;
         }
         .second-row td{
+            border-top: 1px solid #ebebeb;
             padding-top: 13px;
+        }
+        td.button-wrap{
+            text-align: center;
+        } 
+        td.button-wrap a{
+            color: #FF7258;
+            text-decoration: underline;
         }
         td.ts_cards_item{
             vertical-align: initial;
@@ -110,18 +120,18 @@
     <body style="margin: 0;font-family: 'Ubuntu', Helvetica Neue, Helvetica, Arial, sans-serif;-webkit-font-smoothing: antialiased;-webkit-text-size-adjust: none;color: #666666;font-size: 15px;line-height: 1.35em;">
         <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable">
             <tr>
-                <td align="center" valign="top">
+                <td align="center" valign="top" style="width: 50%;">
                     <table border="0" cellpadding="20" cellspacing="0" width="600" id="emailContainer">
                         <!-- hedaer here -->
                         <tr>
-                            <td align="center" valign="top">
+                            <td align="center" valign="top" style="width: 50%;">
                                 <table border="0" cellpadding="20" cellspacing="0" width="100%" id="emailBody" style="background-color: #f9f9f9;">
                                     <tr>
-                                        <td align="center" valign="top" style="padding: 0;">
+                                        <td align="center" valign="top" style="padding: 0;width: 50%;">
                                             <span class="heading" style="margin-top: 10px;font-size: 18px;font-weight: 300;display: inline-block;">Sácale el máximo partido al Networking de Betabeers</span>
                                             <table class="ts_cards" style="margin: 10px;position: relative;border-radius: 6px;border: 2px solid #ebebeb;padding: 20px;margin-bottom: 10px;background-color: #fff;font-family: 'Ubuntu', Helvetica, Arial;color: #666666;text-align: left;font-size: 15px;line-height: 1.25em;">
                                                 <tr class="first-row">
-                                                    <td class="ts_cards_item" style="padding-bottom: 12px;border-bottom: 1px solid #ebebeb;vertical-align: initial;">
+                                                    <td class="ts_cards_item" style="width: 50%;padding-bottom: 12px;vertical-align: initial;">
                                                         <div class="contacts-grid-item-data col-sm-9 padding-null">
                                                             <a href="{{url1}}" style="text-decoration: underline;color: #00a7c7;"><img src="{{avatar1}}" alt="" class="pull-left avatar" style="width: 80px;height: 80px;float: left;"></a>
 
@@ -132,10 +142,9 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <a href="{{url1}}" style="text-decoration: underline;color: #00a7c7;">Conócele en BB</a>
                                                     </td>
 
-                                                    <td class="ts_cards_item" style="padding-bottom: 12px;border-bottom: 1px solid #ebebeb;vertical-align: initial;">
+                                                    <td class="ts_cards_item" style="width: 50%;padding-bottom: 12px;vertical-align: initial;">
                                                         <div class="contacts-grid-item-data col-sm-9 padding-null">
                                                             <a href="{{url2}}" style="text-decoration: underline;color: #00a7c7;"><img src="{{avatar2}}" alt="" class="pull-left avatar" style="width: 80px;height: 80px;float: left;"></a>
 
@@ -146,11 +155,14 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <a href="{{url2}}" style="text-decoration: underline;color: #00a7c7;">Conócele en BB</a>
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <td class="button-wrap" style="width: 50%;text-align: center;"><a href="{{url1}}" style="text-decoration: underline;color: #FF7258;">Conócele en BB</a></td>
+                                                    <td class="button-wrap" style="width: 50%;text-align: center;"><a href="{{url2}}" style="text-decoration: underline;color: #FF7258;">Conócele en BB</a></td>
+                                                </tr>
                                                 <tr class="second-row">
-                                                    <td class="ts_cards_item" style="padding-top: 13px;vertical-align: initial;">
+                                                    <td class="ts_cards_item" style="width: 50%;border-top: 1px solid #ebebeb;padding-top: 13px;vertical-align: initial;">
                                                         <div class="contacts-grid-item-data col-sm-9 padding-null">
                                                             <a href="{{url3}}" style="text-decoration: underline;color: #00a7c7;"><img src="{{avatar3}}" alt="" class="pull-left avatar" style="width: 80px;height: 80px;float: left;"></a>
 
@@ -161,9 +173,8 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <a href="{{url3}}" style="text-decoration: underline;color: #00a7c7;">Conócele en BB</a>
                                                     </td>
-                                                    <td class="ts_cards_item" style="padding-top: 13px;vertical-align: initial;">
+                                                    <td class="ts_cards_item" style="width: 50%;border-top: 1px solid #ebebeb;padding-top: 13px;vertical-align: initial;">
                                                         <div class="contacts-grid-item-data col-sm-9 padding-null">
                                                             <a href="{{url4}}" style="text-decoration: underline;color: #00a7c7;"><img src="{{avatar4}}" alt="" class="pull-left avatar" style="width: 80px;height: 80px;float: left;"></a>
 
@@ -174,11 +185,14 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <a href="{{url4}}" style="text-decoration: underline;color: #00a7c7;">Conócele en BB</a>
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <td class="button-wrap" style="width: 50%;text-align: center;"><a href="{{url3}}" style="text-decoration: underline;color: #FF7258;">Conócele en BB</a></td>
+                                                    <td class="button-wrap" style="width: 50%;text-align: center;"><a href="{{url4}}" style="text-decoration: underline;color: #FF7258;">Conócele en BB</a></td>
+                                                </tr>
                                             </table>
-                                            <div class="powered" style="text-align: right;padding-right: 10px;padding-bottom: 5px;font-size: 15px;line-height: 18px;height: 18px;position: relative;">
+                                            <div class="powered" style="text-align: right;padding-right: 10px;padding-bottom: 5px;font-size: 15px;line-height: 18px;height: 18px;position: relative; font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, 'Sans Serif'; color:#999999">
                                                 <span style="height: 18px;line-height: 18px;display: inline-block;position: relative;vertical-align: bottom;margin-right: 5px;">Powered by </span><a href="http://tiesport.com" style="text-decoration: underline;color: #00a7c7;height: 18px;display: inline-block;position: relative;"><img alt="tiesport" src="http://s3.amazonaws.com/tiesportstageing/static/logos/logo_18x79.png" style="width: 79px;height: 18px;"></a>
                                             </div>
                                         </td>

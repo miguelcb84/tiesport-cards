@@ -18,6 +18,9 @@
             text-decoration: underline;
             color: #00a7c7;
         }
+        td{
+            width: 50%;
+        }
         #emailBody{
             background-color: #f9f9f9;
         }
@@ -39,10 +42,17 @@
         }
         .first-row td{
             padding-bottom: 12px;
-            border-bottom: 1px solid #ebebeb;
         }
         .second-row td{
+            border-top: 1px solid #ebebeb;
             padding-top: 13px;
+        }
+        td.button-wrap{
+            text-align: center;
+        } 
+        td.button-wrap a{
+            color: #FF7258;
+            text-decoration: underline;
         }
         td.ts_cards_item{
             vertical-align: initial;
@@ -132,7 +142,6 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <a href="{{url1}}">Conócele en BB</a>
                                                     </td>
 
                                                     <td class="ts_cards_item">
@@ -146,8 +155,11 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <a href="{{url2}}">Conócele en BB</a>
                                                     </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="button-wrap"><a href="{{url1}}">Conócele en BB</a></td>
+                                                    <td class="button-wrap"><a href="{{url2}}">Conócele en BB</a></td>
                                                 </tr>
                                                 <tr class="second-row">
                                                     <td class="ts_cards_item">
@@ -161,7 +173,6 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <a href="{{url3}}">Conócele en BB</a>
                                                     </td>
                                                     <td class="ts_cards_item">
                                                         <div class="contacts-grid-item-data col-sm-9 padding-null">
@@ -174,8 +185,11 @@
                                                                 </p>
                                                             </div>
                                                         </div>
-                                                        <a href="{{url4}}">Conócele en BB</a>
                                                     </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="button-wrap"><a href="{{url3}}">Conócele en BB</a></td>
+                                                    <td class="button-wrap"><a href="{{url4}}">Conócele en BB</a></td>
                                                 </tr>
                                             </table>
                                             <div class="powered">
@@ -193,3 +207,4 @@
         </table>
     </body>
 </html> 
+    

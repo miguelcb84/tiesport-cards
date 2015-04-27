@@ -1,3 +1,7 @@
 *.csv
 .~*
 output/
+output-GH/
+*.zip
+bb_tiesport*
+
