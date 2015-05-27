@@ -1,0 +1,47 @@
+{% for user in yellowpages %}
+<div class="col-xs-12 col-sm-6 padding-min facet-item" data-area="{{user.area}}" data-freelance="{{user.freelance}}">
+    <div class="box contacts-grid-item contact_match">
+        <div class="row">
+            <div class="contacts-grid-item-data col-xs-12 padding-null">
+                <img src="{{user.pic}}" alt="" class="pull-left">
+                <div class="contacts-grid-item-data-right">
+                    <a href="{{user.url}}" class="mixpanel" data-name="bb-event-part-card-nameprofile" data-prop="{{user.url}}"><span class="titulo_sm">{{user.name}}</span></a>
+                        <div class="profile-field"><i class="fa fa-building"></i>WERWERWERWERWERWERWERWERWERWERWERWER</div>
+                        <div class="profile-field"><i class="fa fa-map-marker"></i>{{user.location}}</div>
+                        <div class="profile-tag">{{user.area}}</div>
+                </div>
+            </div>
+            <div class="col-xs-12 padding-null">
+                <div class="texto">
+                    <div class="bio">
+                        {{user.bio}}    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_wrap_sm footer hidden-xs">
+            <div class="social-contact-icons">
+                {% if user.twitter %}
+                    <a href="{{user.twitter}}" class="twitter mixpanel" data-name="event-part-card-seetwitter" data-prop="{{user.url}}" target="blank"><i class="fa fa-twitter"></i></a>
+                {% endif %}
+                {% if user.linkedin %}
+                    <a href="{{user.linkedin}}" class="linkedin mixpanel" data-name="event-part-card-seelinkedin" data-prop="{{user.url}}" target="blank"><i class="fa fa-linkedin"></i></a>
+                {% endif %}
+                {% if user.github %}
+                    <a href="{{user.github}}" class="github mixpanel" data-name="event-part-card-seegithub" data-prop="{{user.url}}" target="blank"><i class="fa fa-github"></i></a>
+                {% endif %}
+                {% if user.angelco %}
+                    <a href="{{user.angelco}}" class="angelco mixpanel" data-name="event-part-card-seeangelco" data-prop="{{user.url}}" target="blank"><i class="fa fa-angellist"></i></a>
+                {% endif %}
+            </div>
+            <a class="btn btn-profile mixpanel" href="{{user.url}}" data-name="event-part-card-seeprofile" data-prop="userprofile:24">See profile</a>
+            <a class="btn btn-contact mixpanel" href="{{user.url}}" data-name="event-part-card-contact" data-prop="userprofile:24">Contact</a>
+        </div>
+        <div class="btn_wrap_sm footer visible-xs-block visible-xs row">
+            <a class="btn btn-profile mixpanel" href="{{user.url}}" data-name="event-part-card-seeprofile" data-prop="userprofile:24">See profile</a>
+            <a class="btn btn-contact mixpanel" href="{{user.url}}" data-name="event-part-card-contact" data-prop="userprofile:24">Contact</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+            
