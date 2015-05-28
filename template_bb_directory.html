@@ -6,7 +6,7 @@
                 <img src="{{user.pic}}" alt="" class="pull-left">
                 <div class="contacts-grid-item-data-right">
                     <a href="{{user.url}}" class="mixpanel" data-name="bb-event-part-card-nameprofile" data-prop="{{user.url}}"><span class="titulo_sm">{{user.name}}</span></a>
-                        <div class="profile-field"><i class="fa fa-building"></i>WERWERWERWERWERWERWERWERWERWERWERWER</div>
+                        <div class="profile-field"><i class="fa fa-building"></i>{{user.company}}</div>
                         <div class="profile-field"><i class="fa fa-map-marker"></i>{{user.location}}</div>
                         <div class="profile-tag">{{user.area}}</div>
                 </div>
@@ -38,8 +38,8 @@
             <a class="btn btn-contact mixpanel" href="{{user.url}}" data-name="event-part-card-contact" data-prop="{{user.url}}">Contact</a>
         </div>
         <div class="btn_wrap_sm footer visible-xs-block visible-xs row">
-            <a class="btn btn-profile mixpanel" href="{{user.url}}" data-name="event-part-card-seeprofile" data-prop="{{user.url}}">See profile</a>
-            <a class="btn btn-contact mixpanel" href="{{user.url}}" data-name="event-part-card-contact" data-prop="{{user.url}}">Contact</a>
+            <a class="btn btn-profile mixpanel col-xs-6" href="{{user.url}}" data-name="event-part-card-seeprofile" data-prop="{{user.url}}">See profile</a>
+            <a class="btn btn-contact mixpanel col-xs-6" href="{{user.url}}" data-name="event-part-card-contact" data-prop="{{user.url}}">Contact</a>
         </div>
     </div>
 </div>
