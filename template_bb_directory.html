@@ -1,3 +1,5 @@
+{{'{% load i18n %}'}}
+
 {% for user in yellowpages %}
 <div class="col-xs-12 col-sm-6 padding-min facet-item" data-area="{{user.area}}" data-freelance="{{user.freelance}}">
     <div class="box contacts-grid-item contact_match">
@@ -6,7 +8,7 @@
                 <img src="{{user.pic}}" alt="" class="pull-left">
                 <div class="contacts-grid-item-data-right">
                     <a href="{{user.url}}" class="mixpanel" data-name="bb-event-part-card-nameprofile" data-prop="{{user.url}}"><span class="titulo_sm">{{user.name}}</span></a>
-                        <div class="profile-field"><i class="fa fa-building"></i>{{user.company}}</div>
+                        <div class="profile-field" title="{{user.orgs}}">{% if user.orgs %}<i class="fa fa-building"></i>{{user.orgs}}{% endif %}</div>
                         <div class="profile-field"><i class="fa fa-map-marker"></i>{{user.location}}</div>
                         <div class="profile-tag">{{user.area}}</div>
                 </div>
@@ -34,12 +36,12 @@
                     <a href="{{user.angelco}}" class="angelco mixpanel" data-name="event-part-card-seeangelco" data-prop="{{user.url}}" target="blank"><i class="fa fa-angellist"></i></a>
                 {% endif %}
             </div>
-            <a class="btn btn-profile mixpanel" href="{{user.url}}" data-name="event-part-card-seeprofile" data-prop="{{user.url}}">See profile</a>
-            <a class="btn btn-contact mixpanel" href="{{user.url}}" data-name="event-part-card-contact" data-prop="{{user.url}}">Contact</a>
+            <a class="btn btn-profile mixpanel" href="{{user.url}}" data-name="event-part-card-seeprofile" data-prop="{{user.url}}">{{'{%'}} trans "See profile" {{'%}'}}</a>
+            <a class="btn btn-contact mixpanel" href="{{user.url}}" data-name="event-part-card-contact" data-prop="{{user.url}}">{{'{%'}} trans "Contact" {{'%}'}}</a>
         </div>
         <div class="btn_wrap_sm footer visible-xs-block visible-xs row">
-            <a class="btn btn-profile mixpanel col-xs-6" href="{{user.url}}" data-name="event-part-card-seeprofile" data-prop="{{user.url}}">See profile</a>
-            <a class="btn btn-contact mixpanel col-xs-6" href="{{user.url}}" data-name="event-part-card-contact" data-prop="{{user.url}}">Contact</a>
+            <a class="btn btn-profile mixpanel col-xs-6" href="{{user.url}}" data-name="event-part-card-seeprofile" data-prop="{{user.url}}">{{'{%'}} trans "See profile" {{'%}'}}</a>
+            <a class="btn btn-contact mixpanel col-xs-6" href="{{user.url}}" data-name="event-part-card-contact" data-prop="{{user.url}}">{{'{%'}} trans "Contact" {{'%}'}}</a>
         </div>
     </div>
 </div>
