@@ -1,0 +1,65 @@
+{{'{% load i18n %}'}}
+
+{% for company in yellowpages %}
+
+<div class="col-xs-12 col-sm-6 padding-min facet-item grid-item">
+    <div class="box contacts-grid-item contact_match">
+        <div class="row">
+            <div class="contacts-grid-item-data col-xs-6 padding-null">
+                <img src="{{company.logo}}" alt="" class="pull-left" style="width: auto; height: auto; max-height:60px;">
+                <div class="contacts-grid-item-data-right">
+                    <a href="{{company.company_uri}}" class="mixpanel" data-name="challengers-tyba-part-card-nameprofile" data-prop="url:{{company.company_uri}}" target="_blank"><span class="titulo_sm">{{company.name}}</span></a>
+                        <div class="profile-field"><i class="fa fa-map-marker"></i> {{company.location}}</div>
+                        
+                </div>
+            </div>
+            <div class="contacts-grid-item-data col-xs-6 padding-null" style="text-align: right">
+                <img src="{{company.pic}}" alt="" class="pull-right"  style="margin-left: 10px;">
+                <a href="{{company.twitter}}" class="mixpanel" data-name="challengers-tyba-part-card-company_uri" data-prop="url:{{company.twitter}}" target="_blank"> <span class="titulo_sm">{{company.contact}} </span></a>
+                <div class="profile-field"> {{company.position}}</div>
+
+            </div>
+            <div class="row col-xs-12 padding-null">
+                <div class="col-xs-6">
+                    <div class="profile-field" title="growth stage">{% if company.growth == 'X' %}<i class="fa fa-check-circle-o"></i> In growth stage{% endif %}</div>
+                    <div class="profile-field" title="Tech company">{% if company.tech == 'X' %}<i class="fa fa-check-circle-o"></i> Tech company{% endif %}</div>
+                </div>
+                <div class="col-xs-6">
+                    <div class="profile-field" title="Innovative company">{% if company.innovation == 'X' %}<i class="fa fa-check-circle-o"></i> Innovative company{% endif %}</div>
+                    <div class="profile-tag">{{company.area}}</div>
+                </div>
+                <div class="texto col-xs-12" style="margin-top: 10px;">
+                    <div class="bio">
+                        {{company.description}}    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btn_wrap_sm footer hidden-xs">
+            <div class="social-contact-icons">
+                {% if company.twitter %}
+                    <a href="{{company.twitter}}" class="twitter mixpanel" data-name="event-part-card-seetwitter" data-prop="{{company.url}}" target="blank"><i class="fa fa-twitter"></i></a>
+                {% endif %}
+                {% if company.linkedin %}
+                    <a href="{{company.linkedin}}" class="linkedin mixpanel" data-name="event-part-card-seelinkedin" data-prop="{{company.url}}" target="blank"><i class="fa fa-linkedin"></i></a>
+                {% endif %}
+                {% if company.github %}
+                    <a href="{{company.github}}" class="github mixpanel" data-name="event-part-card-seegithub" data-prop="{{company.url}}" target="blank"><i class="fa fa-github"></i></a>
+                {% endif %}
+                {% if company.angelco %}
+                    <a href="{{company.angelco}}" class="angelco mixpanel" data-name="event-part-card-seeangelco" data-prop="{{company.url}}" target="blank"><i class="fa fa-angellist"></i></a>
+                {% endif %}
+            </div>
+            <!--
+            <a class="btn btn-profile mixpanel" href="{{company.url}}" data-name="event-part-card-seeprofile" data-prop="{{company.url}}">{{'{%'}} trans "See profile" {{'%}'}}</a>
+            <a class="btn btn-contact mixpanel" href="{{company.url}}" data-name="event-part-card-contact" data-prop="{{company.url}}">{{'{%'}} trans "Contact" {{'%}'}}</a>
+        -->
+        </div>
+        <div class="btn_wrap_sm footer visible-xs-block visible-xs row">
+            <a class="btn btn-profile mixpanel col-xs-6" href="{{company.url}}" data-name="event-part-card-seeprofile" data-prop="{{company.url}}">{{'{%'}} trans "See profile" {{'%}'}}</a>
+            <a class="btn btn-contact mixpanel col-xs-6" href="{{company.url}}" data-name="event-part-card-contact" data-prop="{{company.url}}">{{'{%'}} trans "Contact" {{'%}'}}</a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+            
